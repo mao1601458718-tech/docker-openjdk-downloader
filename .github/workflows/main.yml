@@ -1,7 +1,7 @@
 name: Download OpenJDK 17 Slim
 
 on:
-  workflow_dispatch:  # 允许手动触发
+  workflow_dispatch:
 
 jobs:
   download:
@@ -10,10 +10,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Pull and Save OpenJDK 17 Slim
+      - name: Pull and Save Eclipse Temurin 17 Slim
         run: |
-          docker pull openjdk:17-jdk-slim
-          docker save openjdk:17-jdk-slim > openjdk-17-slim.tar
+          docker pull eclipse-temurin:17-jdk-slim
+          docker save eclipse-temurin:17-jdk-slim > openjdk-17-slim.tar
 
       - name: Upload as Artifact
         uses: actions/upload-artifact@v4
